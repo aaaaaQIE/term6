@@ -1,3 +1,9 @@
 # term6
 
-preparing...
+## Coming soon
+
+### The second semester of junior year
+
+#### edited by typora
+
+##### 2023.01

@@ -1,1 +1,3 @@
 # term6
+
+preparing...

@@ -8,6 +8,10 @@
 
 ```disconnect <ip>``` ：断开连接局域网设备。单独输入 ```adb disconnect``` 可断开所有设备
 
+```kill-server``` ：删除所有设备
+
+```start-server``` ：重启adb
+
 ```install <example.apk>``` ：安装软件进手机
 
 ```shell dumpsys battery``` ：查看电池电量的相关信息

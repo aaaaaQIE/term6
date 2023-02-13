@@ -110,6 +110,29 @@ temp/		#忽略temp目录下的所有文件和目录
    ```
 
    执行完上面的 git 命令后，在命令行正常执行 pull、push ，如果是在以上操作完之后第一次执行 pull、push ，需要输入一次用户名密码，以后不再需要输入。
+   
+5. ```sign_and_send_pubkey: signing failed: agent refused operation``` 
+
+   这是由于ssh的环境发生了变化，需要执行如下命令即可解决：
+
+   ```
+   eval "$(ssh-agent -s)"
+   ssh-add
+   ```
+
+   需要注意的是.ssh里面文件的权限非常重要，权限错了否则不能正常登陆！
+
+   因为sshd为了安全，对属主的目录和文件权限有所要求，需要保障其他用户不能有写权限。如果权限不对，则ssh的免密码登陆不生效。
+
+   ```.ssh``` 目录权限一般为 ```755``` 或者 ```700``` 。
+
+   ```id_rsa.pub``` 及 ```authorized_keys``` 权限一般为 ```644``` 
+
+   ```id_rsa``` 权限必须为 ```600``` 
+
+   处理完成后再次 ```ssh-keygen -t rsa``` ，成功会生成一张由ascii组成的随机图片。 
+   
+   操作完进行测试 ```ssh -Tv git@github.com``` 
 
 ## 实际案例
 

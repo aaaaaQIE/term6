@@ -79,7 +79,7 @@ mkinitcpio -p linux	#生成内存镜像（for LVM）
 passwd	#设置root密码，输入两遍，不显示
 useradd -m -g wheel USER	#新建用户USER
 passwd USER	#设置USER密码
-visudo #反注释%wheel ALL=(ALL) NOPASSWD:ALL后可以用sudo免密码提权
+visudo #反注释 %wheel ALL=(ALL) ALL 后可以用sudo免密码提权
 mkdir /boot/grub
 uname -m	#查看cpu架构，一般为x86_64
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB	#安装grub引导

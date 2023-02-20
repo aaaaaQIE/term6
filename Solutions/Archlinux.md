@@ -53,7 +53,7 @@ pacman -Syy	#强制更新pacman
 mount /dev/vg/root /mnt	#将主分区挂载到u盘系统的mnt中
 mkdir /mnt/boot	#新建文件夹boot
 mount /dev/sda1 /mnt/boot	#挂载EFI引导分区到boot文件夹
-pacstrap /mnt base base-devel linux linux-firmware amd-ucode vim git networkmanager grub efibootmgr	os-prober lvm2 gnome gnome-extra	#安装linux内核及各种基础软件，intel的cpu则安装intel-ucode而不是amd-ucode
+pacstrap /mnt base base-devel linux linux-firmware amd-ucode vim git grub efibootmgr	os-prober lvm2	#安装linux内核及各种基础软件，intel的cpu则安装intel-ucode而不是amd-ucode
 genfstab -U /mnt >> /mnt/etc/fstab	#生成fstab（File System TABle）
 ```
 

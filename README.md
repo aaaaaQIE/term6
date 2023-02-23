@@ -1,6 +1,6 @@
 # term6
 
-## Coming soon
+## Energy and Power Engineering
 
 ### The second semester of junior year
 

@@ -146,7 +146,7 @@ temp/		#忽略temp目录下的所有文件和目录
 
    Github只允许上传最大100MB的文件，如果超过，则会被拒绝上传。
 
-   解决这个问题的方式：运行如下命令删除有关某个文件的push：
+   解决这个问题的方式：运行如下命令删除有关某个文件的push
 
    `git filter-branch --force --index-filter "git rm --cached --ignore-unmatch <file>"  --prune-empty --tag-name-filter cat -- --all`
 

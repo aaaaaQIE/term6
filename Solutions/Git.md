@@ -133,6 +133,30 @@ temp/		#忽略temp目录下的所有文件和目录
    处理完成后再次 ```ssh-keygen -t rsa``` ，成功会生成一张由ascii组成的随机图片。 
    
    操作完进行测试 ```ssh -Tv git@github.com``` 
+   
+6. ```
+   remote: error: Trace: ee978cd0172947d342c66ef1196903c98e74787df2e1ee55efcd7a308514eabe
+   remote: error: See https://gh.io/lfs for more information.
+   remote: error: File 就业指导/resources/南林TTSC7-8.pptx is 151.40 MB; this exceeds GitHub's file size limit of 100.00 MB
+   remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+   To https://github.com/aaaaaQIE/term6.git
+    ! [remote rejected] main -> main (pre-receive hook declined)
+   error: failed to push some refs to 'https://github.com/aaaaaQIE/term6.git'
+   ```
+
+   Github只允许上传最大100MB的文件，如果超过，则会被拒绝上传。
+
+   解决这个问题的方式：运行如下命令删除有关某个文件的push：
+
+   `git filter-branch --force --index-filter "git rm --cached --ignore-unmatch <file>"  --prune-empty --tag-name-filter cat -- --all`
+
+   修改 log 信息后保存返回
+
+   `git commit --amend` （也许不需要）
+
+   重新提交
+
+   `git push` 或 `git push --force`
 
 ## 实际案例
 

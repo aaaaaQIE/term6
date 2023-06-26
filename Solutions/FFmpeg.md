@@ -112,3 +112,28 @@ It accepts the following parameters:
 * ```first``` : The duration of the first input.
 
 ```dropout_transition``` : The transition time, in seconds, for volume renormalization when an input stream ends. The default value is 2 seconds.
+
+### 7、视频转换为GIF
+
+```
+ffmpeg -i INPUT.mp4 OUTPUT.gif
+```
+
+制作出来体积太大，可以进行抽帧，例如减少至16fps：
+
+```
+ffmpeg -i INPUT.gif -r 16 OUTPUT.gif
+```
+
+也可以缩小图片尺寸：
+
+```
+ffmpeg -i INPUT.gif -s {WxH} INPUT.gif
+```
+
+-s 选项用于指定输出文件的尺寸大小，格式上是「宽度(W)x高度(H)」，如设置为320⨉240：
+
+```
+ffmpeg -i INPUT.gif -s 320x240 INPUT.gif
+```
+

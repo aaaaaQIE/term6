@@ -110,7 +110,7 @@ temp/		#忽略temp目录下的所有文件和目录
    ```
 
    执行完上面的 git 命令后，在命令行正常执行 pull、push ，如果是在以上操作完之后第一次执行 pull、push ，需要输入一次用户名密码，以后不再需要输入。
-   
+
 5. ```sign_and_send_pubkey: signing failed: agent refused operation``` 
 
    这是由于ssh的环境发生了变化，需要执行如下命令即可解决：
@@ -131,9 +131,9 @@ temp/		#忽略temp目录下的所有文件和目录
    ```id_rsa``` 权限必须为 ```600``` 
 
    处理完成后再次 ```ssh-keygen -t rsa``` ，成功会生成一张由ascii组成的随机图片。 
-   
+
    操作完进行测试 ```ssh -Tv git@github.com``` 
-   
+
 6. ```
    remote: error: Trace: ee978cd0172947d342c66ef1196903c98e74787df2e1ee55efcd7a308514eabe
    remote: error: See https://gh.io/lfs for more information.
@@ -157,6 +157,16 @@ temp/		#忽略temp目录下的所有文件和目录
    重新提交
 
    `git push` 或 `git push --force`
+
+7. ```
+   Changes not staged for commit:
+   ```
+
+   提交时加上参数： `-a` ，表示新增。
+
+   ```
+   git commit -am "提交说明"
+   ```
 
 ## 实际案例
 
